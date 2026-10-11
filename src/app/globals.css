@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* 색상 토큰: 라이트 기본, 시스템 다크 모드에서 재정의 */
+:root {
+  --background: #f2f5ef;
+  --surface: #ffffff;
+  --foreground: #1c2a22;
+  --muted: #5f6e64;
+  --line: #d9e1d6;
+  --accent: #2f6b4f;
+  --accent-soft: #e3ede6;
+  --on-accent: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111712;
+    --surface: #19211b;
+    --foreground: #e6eee7;
+    --muted: #9aab9f;
+    --line: #2a362d;
+    --accent: #7cc39c;
+    --accent-soft: #1f3328;
+    --on-accent: #0e1a13;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
